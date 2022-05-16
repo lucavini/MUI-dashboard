@@ -1,25 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+import { ThemeProvider as MUIThemeProvider } from '@mui/material/styles';
+
+import GlobalStyles from './Styles/global';
+
+import MUITheme from './Styles/Default/MUI';
+import SCTheme from './Styles/Default/Styled';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MUIThemeProvider theme={MUITheme}>
+      <StyledThemeProvider theme={SCTheme}>
+        <GlobalStyles />
+        <div className='App'>ola mundo</div>
+      </StyledThemeProvider>
+    </MUIThemeProvider>
   );
 }
 
