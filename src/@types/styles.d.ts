@@ -7,22 +7,10 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     palette: {
       primary: {
-        lighter: string;
-        light: string;
+        contrastText: string;
         main: string;
         dark: string;
-      };
-
-      secondary: {
-        lighter: string;
         light: string;
-        mainLight: string;
-        main: string;
-        dark: string;
-      };
-
-      error: {
-        main: string;
       };
     };
   }
@@ -30,24 +18,21 @@ declare module 'styled-components' {
 
 declare module '@mui/material/styles' {
   export interface PaletteColorOptions {
-    lighter?: string;
-    light?: string;
+    contrastText?: string;
     main?: string;
     dark?: string;
-    contrastText?: string;
+    light?: string;
   }
   export interface PaletteColor {
-    lighter?: string;
-    light?: string;
+    contrastText?: string;
     main?: string;
     dark?: string;
-    contrastText?: string;
+    light?: string;
   }
   export interface SimplePaletteColorOptions {
-    lighter?: string;
-    light?: string;
+    contrastText?: string;
     main?: string;
     dark?: string;
-    contrastText?: string;
+    light?: string;
   }
 }

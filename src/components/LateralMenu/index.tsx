@@ -29,11 +29,12 @@ import { Drawer, List } from './styles';
 import { ReactComponent as Logo } from '../../Assets/images/logo.svg';
 
 function LateralMenu() {
+  const [over, setOver] = React.useState(false);
   return (
     <Drawer variant='permanent' anchor='left'>
       <Logo className='logo' />
 
-      <List>
+      <List mouseOver={over} onMouseOver={() => setOver(true)} onMouseOut={() => setOver(false)}>
         <ListItem component={Link} to='/' button className='item'>
           <ListItemIcon>
             <Tooltip title='Dashboard' placement='right'>

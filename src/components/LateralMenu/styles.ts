@@ -9,7 +9,6 @@ export const Drawer = styled(MuiDrawer, {
   width: drawerWidth,
   flexShrink: 0,
   '& .MuiDrawer-paper': {
-    borderRadius: '10px',
     boxShadow: '20px 35px 50px #0000001A',
     overflow: 'hidden',
     display: 'flex',
@@ -29,22 +28,45 @@ export const Drawer = styled(MuiDrawer, {
 
   '.icon': {
     margin: '0 auto',
-    fill: theme.palette.primary.dark,
-    color: theme.palette.primary.dark,
+    fill: '#BCC6DA',
   },
 
   '.item': {
     margin: '10px 0px',
 
     '&:hover .icon': {
-      fill: '#fff',
-      color: '#fff',
+      fill: theme.palette.primary.main,
     },
   },
 }));
 
-export const List = styled(MuiList)(() => ({
+type Props = {
+  mouseOver: boolean;
+}
+
+export const List = styled(MuiList)(({ mouseOver }: Props) => ({
   height: '100%',
-  overflowY: 'hidden',
+  width: '140%',
+  overflowY: 'scroll',
   overflowX: 'hidden',
+
+  /* width */
+  '&::-webkit-scrollbar': {
+    width: '16px',
+  },
+
+  /* Track */
+  '&::-webkit-scrollbar-track': {
+    background: 'transparent',
+  },
+
+  /* Handle */
+  '&::-webkit-scrollbar-thumb': {
+    background: mouseOver ? '#888' : 'transparent',
+  },
+
+  /* Handle on hover */
+  '::-webkit-scrollbar-thumb:hover': {
+    background: '#555',
+  },
 }));
