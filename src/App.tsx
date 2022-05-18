@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import Box from '@mui/material/Box';
 
 // Themes
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
@@ -9,27 +8,25 @@ import GlobalStyles from './Styles/global';
 
 // default Styles
 import MUITheme from './Styles/Default/MUI';
+import MUIDarkTheme from './Styles/Default/MUIDark';
 import SCTheme from './Styles/Default/Styled';
+import SCDarkTheme from './Styles/Default/StyledDark';
 
 // Componentes
-import { DrawerHeader } from './components/DrawerHeader';
-import LateralMenu from './components/LateralMenu';
+import ContentWrapper from './components/ContentWrapper';
 import Routes from './Routes';
 
 function App() {
+  const [theme, setTheme] = React.useState('light');
   return (
-    <MUIThemeProvider theme={MUITheme}>
-      <StyledThemeProvider theme={SCTheme}>
+    <MUIThemeProvider theme={theme === 'light' ? MUITheme : MUIDarkTheme}>
+      <StyledThemeProvider theme={theme === 'light' ? SCTheme : SCDarkTheme}>
         <GlobalStyles />
-        <BrowserRouter>
-          <Box sx={{ display: 'flex' }}>
-            <LateralMenu />
 
-            <Box component='main' sx={{ flexGrow: 1, p: 3 }}>
-              <DrawerHeader />
-              <Routes />
-            </Box>
-          </Box>
+        <BrowserRouter>
+          <ContentWrapper theme={theme} setTheme={setTheme}>
+            <Routes />
+          </ContentWrapper>
         </BrowserRouter>
       </StyledThemeProvider>
     </MUIThemeProvider>
