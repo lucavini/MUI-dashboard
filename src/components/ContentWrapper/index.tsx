@@ -18,9 +18,9 @@ function ContentWrapper({ children, setTheme, theme }: Props) {
       <CssBaseline />
 
       <LateralMenu />
-      <Box component='main' sx={{ flexGrow: 1, padding: '0px 40px' }}>
+      <Box component='main' sx={{ flexGrow: 1 }}>
         <NavBar setTheme={setTheme} theme={theme} />
-        <Box component='main' sx={{ padding: '0px 20px' }}>
+        <Box component='main'>
           {children}
         </Box>
       </Box>
