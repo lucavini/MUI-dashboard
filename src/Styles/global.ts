@@ -8,6 +8,10 @@ export default createGlobalStyle`
         font-family: 'Montserrat', sans-serif;
         font-weight: 600;
     }
+
+    html{
+        background: ${({ theme }) => theme.palette.primary.dark};
+    }
     
     main{
         background: ${({ theme }) => theme.palette.primary.dark};

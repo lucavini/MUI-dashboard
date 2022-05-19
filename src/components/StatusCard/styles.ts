@@ -4,6 +4,7 @@ export const Card = styled.div`
   width: 100%;
   height: 120px;
   border-radius: 5px;
+  box-shadow: 0px 2px 2px rgba(29, 36, 56, 0.1);
   background: ${({ theme }) => theme.palette.primary.light};
   grid-column: span 2;
 

@@ -8,6 +8,7 @@ import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
 import StatusCard from '../../components/StatusCard';
 
 import { Container } from './styles';
+import TotalSpent from '../../components/TotalSpent';
 
 function Home() {
   return (
@@ -31,6 +32,8 @@ function Home() {
         <span className='Title'>New Clients</span>
         <span className='Price'>$321</span>
       </StatusCard>
+
+      <TotalSpent />
     </Container>
   );
 }
