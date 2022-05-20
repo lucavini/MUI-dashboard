@@ -6,14 +6,18 @@ import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
 import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
 
 import StatusCard from '../../components/StatusCard';
-
-import { Container } from './styles';
+import Regards from '../../components/Regards';
 import TotalSpent from '../../components/TotalSpent';
 import TotalSales from '../../components/TotalSales';
+
+import { Container } from './styles';
 
 function Home() {
   return (
     <Container>
+
+      <Regards />
+
       <StatusCard type='spending' Icon={ShoppingBasketOutlinedIcon}>
         <span className='Title'>All Spending</span>
         <span className='Price'>$547</span>

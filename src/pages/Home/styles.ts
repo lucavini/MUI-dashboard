@@ -10,6 +10,7 @@ export const Container = styled.div`
 
   display: grid;
   grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 100px 100px auto;
   column-gap: 30px;
   row-gap: 30px;
 `;
