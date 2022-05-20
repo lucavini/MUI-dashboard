@@ -1,8 +1,9 @@
+/* eslint-disable object-curly-newline */
 /* eslint-disable react/prop-types */
 /* eslint-disable arrow-body-style */
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { VictoryChart, VictoryBar, VictoryAxis } from 'victory';
+import { VictoryChart, VictoryBar, VictoryAxis, VictoryTooltip } from 'victory';
 
 import { Container, Graph } from './styles';
 
@@ -59,6 +60,8 @@ function TotalSpent() {
             data={data}
             x='quarter'
             y='Spent'
+            labels={({ datum }) => `Spent: $${datum.Spent}`}
+            labelComponent={<VictoryTooltip pointerLength={0} />}
           />
         </VictoryChart>
       </Graph>

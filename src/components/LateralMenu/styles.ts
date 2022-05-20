@@ -41,10 +41,10 @@ export const Drawer = styled(MuiDrawer, {
 }));
 
 type Props = {
-  mouseOver: boolean;
+  mouseover: string;
 }
 
-export const List = styled(MuiList)(({ mouseOver }: Props) => ({
+export const List = styled(MuiList)(({ mouseover }: Props) => ({
   height: '100%',
   width: '140%',
   overflowY: 'scroll',
@@ -62,7 +62,7 @@ export const List = styled(MuiList)(({ mouseOver }: Props) => ({
 
   /* Handle */
   '&::-webkit-scrollbar-thumb': {
-    background: mouseOver ? '#888' : 'transparent',
+    background: mouseover === 'true' ? '#888' : 'transparent',
   },
 
   /* Handle on hover */

@@ -9,6 +9,7 @@ import StatusCard from '../../components/StatusCard';
 
 import { Container } from './styles';
 import TotalSpent from '../../components/TotalSpent';
+import TotalSales from '../../components/TotalSales';
 
 function Home() {
   return (
@@ -34,6 +35,8 @@ function Home() {
       </StatusCard>
 
       <TotalSpent />
+
+      <TotalSales />
     </Container>
   );
 }
